@@ -366,12 +366,13 @@ export default {
         this.time = JSON.stringify(this.selectedDays)
       }
       this.showInfo.check = false
-      
+      this.$emit('change', this.time)
     },
     dismiss (evt) {
       if(evt.target.className === 'datepicker-overlay'){
         if(this.option.dismissible == undefined || this.option.dismissible){
           this.showInfo.check = false;
+          this.$emit('cancel')
         }
       }
     }
